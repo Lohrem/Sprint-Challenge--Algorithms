@@ -98,17 +98,15 @@ class SortingRobot:
         """
         # Fill this out
         while self.can_move_right():
-            self.move_right()
-            if self.compare_item() == -1:
-                self.swap_item()
-        while self.can_move_left():
-            self.move_left()
-            if self.compare_item() == 1:
-                self.swap_item()
-            if self.compare_item() == None:
-                self.swap_item()
-                self.move_right()
-                self.swap_item()
+            self.swap_item() # sets a flag, in this case it will be None, sort of like a placeholder
+            while self.can_move_right():
+                self.move_right() #after the robot has placed the None flag, move right until it finds the smallest number or it reaches the end
+                if self.compare_item() == 1:
+                    self.swap_item() # Swap items in the array until the held item is less than the item that is currectly being held
+            while self.compare_item() != None:
+                self.move_left() # After it has found the smallest value, move left until it finds the None flag that was initiated in the beginning
+            self.swap_item() # swap the smallest value with the None flag
+            self.move_right() # rinse and repeat until it cant no more
 
 
 if __name__ == "__main__":
