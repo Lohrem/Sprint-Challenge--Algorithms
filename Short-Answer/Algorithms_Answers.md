@@ -14,7 +14,7 @@ b) Due to the second loop comparing values, the runtime complexity is O(n) since
 
         ###### Revision
             '''
-            Since there is a loop inside of another loop, this would run in quadratic time, O(n^2), as in the run time would exponentially grow depending on the size of the input. 
+            Since in the second loop there is a coefficient that is doubling each time the code runs, and since it till run until `j < n`, this would run in logarithmic time, O(log n).
             '''
 
 
@@ -22,7 +22,7 @@ c) This function is checking if bunnies exist, therefore the runtime complexity 
 
         ###### Revision
             '''
-            Since the first part of the function
+            This would run in linear time, O(n), this code will run until the base case is met. As in, depending on the size of the input, the longer or less time it will take until it reaches 0.
             '''
 
 ## Exercise II
